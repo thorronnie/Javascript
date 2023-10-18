@@ -13,10 +13,10 @@ alert(nom);
 var prénom= prompt("Saisissez votre prénom");
 alert(prénom);
 
-var nb1= window.prompt("entrez un nombre");
-var nb2= window.prompt("entrez un deuxième nombre");
+var nb1= parseInt(window.prompt("entrez un nombre"));
+var nb2= parseInt(window.prompt("entrez un deuxième nombre"));
 alert(nb1*nb2);
 
-var C= window.prompt("entrez la température en degrés");
-var F=(C*9/5)+32;
+var C= parseInt(window.prompt("entrez la température en degrés"));
+var F= parseInt(((C*9/5)+32));
 alert("la température en Fahrenheit est de "+F);
