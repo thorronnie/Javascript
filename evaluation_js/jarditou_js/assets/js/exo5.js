@@ -1,4 +1,4 @@
-var submit = document.getElementById('btn_envoi');
+var validation = document.getElementById('btn_envoi');
 var nom = document.getElementById('nom');
 var nom_m = document.getElementById('nom_manquant');
 

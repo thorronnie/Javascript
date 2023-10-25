@@ -1,40 +1,54 @@
-var PU;
-var QTECOM;
-var PAP;
-var REM;
-var PORT;
- 
+PU =parseInt(window.prompt("prix unitaire du produit:"));
+QTECOM = parseInt(window.prompt("Quantité du produit:"));
+var REM=0;
+var PORT=0;
+var TOT = PU*QTECOM;
 
-PU = parseInt (window.prompt("saisir prix unitaire"));
-QTECOM = parseInt(window.prompt("entrez la quantité"));
-var TOT=PU*QTECOM;
-alert(TOT)
+if (TOT<100){
+    PORT=6;
+    PAP = TOT+PORT;
+    alert("Les frais de port sont de :"+PORT+ "€\n"+"Le prix total a payé est de :"+PAP+"€\n");
 
-/*calcul de la remise*/
-function remise(){
-
-if (TOT>=100 && TOT<=200){
-   REM = TOT*0.95;
-   console.log(REM);
-}
-else if (TOT>200){
-    REM= TOT*0.90;
-    console.log(REM);
 }
 
-alert(REM);
-}
-remise(REM);
+else if (TOT>=100 && TOT<=200){
+    prixrem = (5*TOT)/100;
+    PORT=6;
+    PAP=TOT-prixrem+PORT;
+    alert("La remise est de "+prixrem+"€\n"+"Les frais de port sont de :"+PORT+ "€\n"+"Le prix total a payé est de :"+PAP+"€\n");
 
-/*calcul des frais de port*/
-
-function frais(){
-
-if (remise <500 && PORT>=6) {
-    PORT = remise *1.02 ;
-    console.log(PORT);
 }
 
-alert(PORT);
+
+
+
+else if (TOT>200 && TOT<500){
+    prixrem = (10*TOT)/100;
+    PORT=prixrem*0.02;
+    PAP=TOT-prixrem+PORT;
+    alert("La remise est de "+prixrem+"€\n"+"Les frais de port sont de :"+PORT+ "€\n"+"Le prix total a payé est de :"+PAP+"€\n");
+
 }
-frais(PORT);
+
+
+
+ else if (TOT>500){
+    REM = (10*TOT)/100;
+    prixrem= TOT-REM;
+    console.log(prixrem);
+    
+        if(prixrem<500){
+    PORT= prixrem*0.02;
+    PAP=prixrem+PORT;
+    alert("La remise est de "+prixrem+"€\n"+"Les frais de port sont de :"+PORT+ "€\n"+"Le prix total a payé est de :"+PAP+"€\n");
+
+ }
+
+        else if (prixrem>500){
+
+    console.log(prixrem);
+    alert("Le prix a payé est de "+prixrem+"€\n");
+
+
+ }
+}
