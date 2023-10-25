@@ -23,9 +23,17 @@ else if (TOT>=100 && TOT<=200){
 
 
 else if (TOT>200 && TOT<500){
-    prixrem = (10*TOT)/100;
-    PORT=prixrem*0.02;
-    PAP=TOT-prixrem+PORT;
+    REM = (10*TOT)/100;
+    prixrem=TOT-REM;
+    if(prixrem<300){
+        PORT=6;
+        PAP=prixrem+PORT;
+    }
+    else if (prixrem>300 && prixrem<500){
+        PORT=prixrem*0.02;
+        PAP=prixrem+PORT;
+
+    }
     alert("La remise est de "+prixrem+"€\n"+"Les frais de port sont de :"+PORT+ "€\n"+"Le prix total a payé est de :"+PAP+"€\n");
 
 }
@@ -36,19 +44,17 @@ else if (TOT>200 && TOT<500){
     REM = (10*TOT)/100;
     prixrem= TOT-REM;
     console.log(prixrem);
-    
-        if(prixrem<500){
+    if(prixrem<500){
     PORT= prixrem*0.02;
     PAP=prixrem+PORT;
     alert("La remise est de "+prixrem+"€\n"+"Les frais de port sont de :"+PORT+ "€\n"+"Le prix total a payé est de :"+PAP+"€\n");
 
  }
 
-        else if (prixrem>500){
-
+ else if (prixrem>500){
+   
     console.log(prixrem);
     alert("Le prix a payé est de "+prixrem+"€\n");
-
-
+   
  }
 }
