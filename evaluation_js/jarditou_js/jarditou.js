@@ -7,6 +7,8 @@ function validerFormulaire() {
 
   let isValid = true;
 
+//-----------------------------------------------------------------------------------
+
   // Valide le nom
   const nom = document.getElementById("nom");
   const erreurNom = document.getElementById("erreur");
@@ -34,11 +36,15 @@ function validerFormulaire() {
     isValid = false;
   } 
 
+//-------------------------------------------------------------------------------------
 
   // Valide le sexe
   if (!validateSexe()) {
     isValid = false;
   }
+
+
+//-------------------------------------------------------------------------------------
 
   // Valide la date de naissance
   const dob = document.getElementById("dob");
@@ -47,6 +53,8 @@ function validerFormulaire() {
   if (!validateRequiredField(dob, erreurDob)) {
     isValid = false;
   }
+
+  //-----------------------------------------------------------------------------------
 
   // Valide le code postal
   const cp = document.getElementById("cp");
@@ -60,6 +68,8 @@ function validerFormulaire() {
     isValid = false;
   }
 
+  //----------------------------------------------------------------------------------
+
   // Valide l'email
   const email = document.getElementById("email");
   const erreurEmail = document.getElementById("erreur4");
@@ -72,6 +82,8 @@ function validerFormulaire() {
     isValid = false;
   }
 
+//-----------------------------------------------------------------------------------
+
   // Valide le sujet
   const sujet = document.getElementById("sujet");
   const erreurSujet = document.getElementById("erreur5");
@@ -81,6 +93,8 @@ function validerFormulaire() {
     isValid = false;
   }
 
+//------------------------------------------------------------------------------------
+
   // Valide la question
   const question = document.getElementById("question");
   const erreurQuestion = document.getElementById("erreur6");
@@ -88,6 +102,8 @@ function validerFormulaire() {
   if (!validateRequiredField(question, erreurQuestion)) {
     isValid = false;
   }
+
+//----------------------------------------------------------------------------------
 
   // Valide l'acceptation des conditions
   const check = document.getElementById("check");
@@ -98,6 +114,8 @@ function validerFormulaire() {
     isValid = false;
   }
 
+//---------------------------------------------------------------------------------
+
   if (!isValid) {
     // Empêche la soumission du formulaire si des erreurs sont présentes
     return false;
@@ -106,6 +124,8 @@ function validerFormulaire() {
   // Si tout est valide, le formulaire sera soumis normalement
   return true;
 }
+
+//----------------------------------------------------------------------------------
 
 function resetErrorMessages() {
   const errorElements = document.querySelectorAll("p[id^='erreur']");
@@ -119,6 +139,10 @@ function validateRequiredField(field, erreur) {
   }
   return true;
 }
+
+//------------------------------------------------------------------------------------
+
+// valide le sexe
 
 function validateSexe() {
   const sexeFeminin = document.getElementById("sexe_f");
